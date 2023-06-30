@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Etch-a-sketch</title>
+</head>
+<body>
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector('.container')
+
+        let heigh = 500
+        let width = 500
+        let x = 16
+        for (let i = 0; i < x*x; i++) {
+            const div = document.createElement('div')
+            container.appendChild(div)
+            div.setAttribute('class', 'grid')
+            div.setAttribute("style", `height: ${heigh/x -2}px; width: ${width/x -2}px; border: solid 1px;`)
+        }
+    </script>
+</body>
+</html>
