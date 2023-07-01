@@ -7,20 +7,89 @@
     <title>Etch-a-sketch</title>
 </head>
 <body>
-    <div class="container"></div>
+    <div class="content">
+        <div class="info">
+            <div class="textInfo">
+                Etch-a-sketch
+            </div>
+            <div class="resetDiv">
+                <button class="reset">Reset</button>
+         </div>
+            <div class="sizeDiv">
+             <div class="gridSizeShower"></div>
+              <input class="sizeSlider" type="range" min="1" value="16" max="64">
+             <button class="resize">Select new size</button>
+         </div>
+        </div>
+        <div class="container"></div>
+    </div>
+    <div class="spodek">
+        ©f0xy3u | Build with The Odin Project
+    </div>
 
     <script>
         const container = document.querySelector('.container')
+        const resetButton = document.querySelector('.reset')
+        const resizeButton = document.querySelector('.resize')
+        const gridSizeShower = document.querySelector('.gridSizeShower')
+        const sizeSlider = document.querySelector('.sizeSlider')
 
-        let heigh = 500
-        let width = 500
-        let x = 16
-        for (let i = 0; i < x*x; i++) {
-            const div = document.createElement('div')
-            container.appendChild(div)
-            div.setAttribute('class', 'grid')
-            div.setAttribute("style", `height: ${heigh/x -2}px; width: ${width/x -2}px; border: solid 1px;`)
+        let alLGridDivs = container.children //constant with all of the grids
+        
+        let heigh = 600
+        let width = 600
+        var size = 16
+
+        sizeSlider.onmousemove = (e) => sizeShowerChanger(e.target.value)
+        sizeSlider.onchange = (e) => sizeSaver(e.target.value)
+        
+        function sizeSaver(value) {
+            lastSize = size
+            size = value
         }
+                
+        function sizeShowerChanger(value) {
+            gridSizeShower.innerText = `${value}x${value}`
+        }
+
+        sizeShowerChanger(size)
+        
+
+        resetButton.addEventListener('click', () => {gridResetor()})
+
+        function gridGenerator(size)  {
+            for (let i = 0; i < size*size; i++) {
+                const gridDiv = document.createElement('div')
+                container.appendChild(gridDiv)
+                gridDiv.setAttribute('class', 'grid')
+                gridDiv.setAttribute("style", `height: ${heigh/size}px; width: ${width/size}px;`)
+            }
+        }
+
+        gridGenerator(size)
+        eventListenerAdder()
+
+        function eventListenerAdder() {
+            for(const node of alLGridDivs) {
+                node.addEventListener('mouseover', () => {node.classList = 'grid colored'})
+            }
+        }
+
+        function gridResetor() {
+            for(const node of alLGridDivs) {
+                node.classList = 'grid'
+            }
+        }
+
+
+        //let i = 0; i <lastSize*lastSize; i++
+        function sizeChanger(value) {
+            container.innerHTML = ''
+            gridGenerator(value)
+            eventListenerAdder()
+        }
+
+        resizeButton.addEventListener('click', () => {sizeChanger(size)})
     </script>
 </body>
 </html>

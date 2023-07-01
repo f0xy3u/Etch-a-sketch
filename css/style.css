@@ -1,15 +1,79 @@
 body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(2, 48, 71);
     height: 100vh;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10%;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-
-    height: 5 00px;
-    width: 500px;
+    border: solid rgb(33, 158, 188);
+    height: 600px;
+    width: 600px;
+    margin: 20px;
 }
 
-.grid {
-    background-color: brown;
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+}
+
+.textInfo {
+    height: 40px;
+    font-size: 20px;
+    color: rgb(142, 202, 230);
+}
+
+.sizeDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(142, 202, 230);
+}
+
+.reset {
+    height: 40px;
+    font-size: 20px;
+    background-color: rgb(33, 158, 188);
+    color: rgb(0, 0, 0);
+    border: solid rgb(255, 183, 3);
+}
+
+.reset:hover {
+    background-color: rgb(30, 128, 153);
+}
+
+.resize {
+    height: 40px;
+    font-size: 20px;
+    background-color: rgb(33, 158, 188);
+    color: rgb(0, 0, 0);
+    border: solid rgb(255, 183, 3);
+}
+
+.resize:hover {
+    background-color: rgb(30, 128, 153);
+}
+
+.colored {
+    background-color: rgb(251, 133, 0);
+}
+
+.spodek {
+    color: rgb(33, 158, 188);
 }
