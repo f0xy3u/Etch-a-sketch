@@ -75,5 +75,15 @@ body {
 }
 
 .spodek {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: rgb(33, 158, 188);
+}
+
+.repos {
+    color: rgb(33, 158, 188);
+    margin-top: 3px;
+    font-size: 10px;
 }
