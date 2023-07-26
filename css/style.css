@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(2, 48, 71);
-    height: 100vh;
+    height: 100%;
 }
 
 .content {
@@ -86,4 +86,21 @@ body {
     color: rgb(33, 158, 188);
     margin-top: 3px;
     font-size: 10px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .content{
+        flex-direction: column;
+    }
+
+    .info {
+        margin: 20px;
+    }
+
+    .container {
+        width: 90vw;
+        height: 90vw;
+    }
 }

@@ -35,10 +35,13 @@
         const gridSizeShower = document.querySelector('.gridSizeShower')
         const sizeSlider = document.querySelector('.sizeSlider')
 
+
+        let rect = container.getBoundingClientRect()
+
         let alLGridDivs = container.children //constant with all of the grids
         
-        let heigh = 600
-        let width = 600
+        let heigh = rect.height - 6
+        let width = rect.width - 6 
         var size = 16
 
         sizeSlider.onmousemove = (e) => sizeShowerChanger(e.target.value)
