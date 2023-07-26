@@ -44,6 +44,7 @@
         let width = rect.width - 6 
         var size = 16
 
+        sizeSlider.ontouchmove = (e) => sizeShowerChanger(e.target.value)
         sizeSlider.onmousemove = (e) => sizeShowerChanger(e.target.value)
         sizeSlider.onchange = (e) => sizeSaver(e.target.value)
         
